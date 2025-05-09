@@ -46,4 +46,8 @@ These rules are defined using Terraform with region-specific providers and dynam
 
 ---
 
-## 🛡️ Why IMDSv
+## 🛡️ Why IMDSv2?
+
+IMDSv2 is a hardened version of the EC2 Instance Metadata Service. It mitigates SSRF (Server-Side Request Forgery) and container escape risks by requiring session tokens for metadata access. Enforcing IMDSv2 is a critical step for defense-in-depth in cloud environments.
+
+---
