@@ -1,3 +1,16 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json"
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["^.*$"],
+      "matchStrings": [
+        "(?<depName>public\\.ecr\\.aws/datadog/agent):(?<currentValue>[A-Za-z0-9._-]+)"
+      ],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "docker",
+      "registryUrlTemplate": "https://public.ecr.aws"
+    }
+  ]
 }
