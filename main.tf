@@ -23,6 +23,7 @@ datadog_container = {
     essential = true
 }
 
+
 # 🔹 IAM Policy: Allow termination + logging
 resource "aws_iam_role_policy" "terminate_policy" {
   name   = "AllowTerminateAndLogs"
