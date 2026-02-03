@@ -19,13 +19,13 @@ resource "aws_iam_role" "lambda_exec_role" {
 
 datadog_container = {
     name      = "datadog-agent"
-    image     = "public.ecr.aws/datadog/agent:7.72.1"
+    image     = "public.ecr.aws/datadog/agent:7.75.1"
     essential = true
 }
 
 {
       name      = "fluent-bit"
-      image     = "public.ecr.aws/aws-observability/aws-for-fluent-bit:3.0.1"
+      image     = "public.ecr.aws/aws-observability/aws-for-fluent-bit:3.2.1"
       essential = true
       firelensConfiguration = {
         type = "fluentbit",
