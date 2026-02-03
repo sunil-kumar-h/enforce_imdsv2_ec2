@@ -17,6 +17,12 @@ resource "aws_iam_role" "lambda_exec_role" {
   })
 }
 
+datadog_container = {
+    name      = "datadog-agent"
+    image     = "public.ecr.aws/datadog/agent:7.72.1"
+    essential = true
+}
+
 # 🔹 IAM Policy: Allow termination + logging
 resource "aws_iam_role_policy" "terminate_policy" {
   name   = "AllowTerminateAndLogs"
