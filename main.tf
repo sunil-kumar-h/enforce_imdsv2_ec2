@@ -23,6 +23,18 @@ datadog_container = {
     essential = true
 }
 
+{
+      name      = "fluent-bit"
+      image     = "public.ecr.aws/aws-observability/aws-for-fluent-bit:3.0.1"
+      essential = true
+      firelensConfiguration = {
+        type = "fluentbit",
+        options = {
+          "enable-ecs-log-metadata" : "true",
+          "config-file-type" : "file",
+          "config-file-value" : "/fluent-bit/configs/parse-json.conf"
+        }
+      }
 
 # 🔹 IAM Policy: Allow termination + logging
 resource "aws_iam_role_policy" "terminate_policy" {
